@@ -9,3 +9,4 @@
  * @since		Version 1.0.0
  */
 require 'system/start.php';
+echo BASE_PATH;

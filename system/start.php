@@ -11,3 +11,8 @@
  * @since		Version 1.0.0
  */
 basename($_SERVER['PHP_SELF']) == 'start.php' && header('Location: http://'.$_SERVER['HTTP_HOST']);
+
+defined('DS')			or define('DS', 		DIRECTORY_SEPARATOR);	// 目录分隔符
+defined('DEBUG') 		or define('DEBUG', 		true);	// 是否调试模式
+defined('ROOT_PATH') 	or define('ROOT_PATH', 	realpath('./') . DS); // 项目根目录
+defined('BASE_PATH')	or define('BASE_PATH', 	ROOT_PATH . 'system' . DS); // 框架路径
