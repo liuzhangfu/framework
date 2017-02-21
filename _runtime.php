@@ -1,0 +1,1 @@
+<?php   final class app { static public function run() { echo 'run'; } }

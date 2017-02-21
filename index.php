@@ -8,5 +8,7 @@
  * @link 		http://www.zorz.cn/
  * @since		Version 1.0.0
  */
+define('DEBUG', false);
 require 'system/start.php';
-echo BASE_PATH;
+
+echo ROOT_PATH;

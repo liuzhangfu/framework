@@ -1,4 +1,4 @@
-<?php
+<?php defined('ROOT_PATH') or exit('Access Denied !');
 /**
  * 框架核心文件
  *

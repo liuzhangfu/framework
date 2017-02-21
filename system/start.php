@@ -20,10 +20,18 @@ defined('BASE_PATH')	or define('BASE_PATH', 	ROOT_PATH . 'system' . DS); // 框�
 defined('APP_PATH')		or define('APP_PATH', 	ROOT_PATH . 'app' . DS); // 应用路径
 
 /* 加载框架核心文件或编译文件 */
-if (DEBUG) {
+if ( DEBUG ) {
 	require BASE_PATH . 'core/app.class.php';	// 引入框架核心文件
 } else {
-	
+	$runtime = ROOT_PATH . '_runtime.php';
+	if ( ! is_file($runtime)) {
+		$s = trim(php_strip_whitespace(BASE_PATH . 'core/app.class.php'), "<?php>\r\n");
+		$s .= trim(php_strip_whitespace(BASE_PATH . 'core/model.class.php'), "<?php>\r\n");
+		$s = str_replace('defined(\'ROOT_PATH\') or exit(\'Access Denied !\');', '', $s);
+		file_put_contents($runtime, '<?php ' . $s);
+		unset($s);
+	}
+	require $runtime;
 }
 
 /* 运行框架 */
