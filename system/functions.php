@@ -1,4 +1,4 @@
-<?php
+<?php defined('BASE_PATH') or exit('Access Denied !');
 /**
  * 框架核心函数库
  *
